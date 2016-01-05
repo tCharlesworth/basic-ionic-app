@@ -1,0 +1,21 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Book</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createBook(newRecipeBookName)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Recipe Book Name</span>
+          <input type="text" ng-model="newRecipeBookName">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,44 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">New Recipe</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+	<label class="item item-input">
+		<span class="input-label">Recipe Name</span>
+		<input type="text" ng-model="newRecipe.name">
+	</label>
+	<!--Sections-->
+	<label class="item item-input item-select">
+		<div class="input-label">
+		Section
+		</div>
+		<select ng-options="section for section in book.sections" ng-model='newRecipe.recipeType'>
+		</select>
+	</label>
+	<!--Ingredients-->
+	<h3>Ingredients</h3>
+	<button ng-click='addIngredient()'><i class="icon ion-plus-round"></i></button>
+	<ion-list>
+		<ion-item ng-repeat="ingred in newRecipe.ingredients track by $index">
+			<input type='text' ng-model='newRecipe.ingredients[$index]' placeholder="ingredient"/>
+		</ion-item>
+	</ion-list>
+	<!--Instructions-->
+	<h3>Instructions</h3>
+	<button ng-click='addInstruction()'><i class="icon ion-plus-round"></i></button>
+	<ion-list>
+		<ion-item ng-repeat="instr in newRecipe.instructions track by $index">
+			<input type='text' ng-model='newRecipe.instructions[$index]' placeholder="instruction"/>
+		</ion-item>
+	</ion-list>
+	<label class="item">
+		<button class="button button-block button-positive" ng-click="createRecipe(newRecipe)" >Create</button>
+	</label>
+	<label class="item">
+		<button class="button button-block button-positive" ng-click='closeModal()'>Cancel</button>
+	</label>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,14 @@
+<ion-view view-title="{{book.bookName}}">
+  <ion-content>
+    <button class="button button-block button-positive"
+        ng-click='openModal()'>
+      New Recipe
+    </button>
+    <ion-list>
+      <ion-item ng-repeat='recipe in recipes'
+           href='#/app/{{book._id}}/{{recipe._id}}'>
+        {{recipe.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

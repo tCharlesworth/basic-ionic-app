@@ -1,0 +1,14 @@
+<ion-view view-title="{{recipe.name}}">
+  <ion-content>
+    <ion-list>
+      <h3>Ingredients</h3>
+      <ion-item ng-repeat='ingredient in recipe.ingredients'>
+        {{ingredient}}
+      </ion-item>
+      <h3>Instructions</h3>
+      <ion-item ng-repeat='instruction in recipe.instructions'>
+        {{instruction}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
